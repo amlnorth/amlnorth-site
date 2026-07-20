@@ -1,0 +1,14 @@
+# Cloudflare Pages headers.
+# jobs.json / jobs-meta.json stay CORS-open so the feed can be read from
+# other origins in the amlnorth family (requirements §2).
+/jobs.json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
+
+/jobs-meta.json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
