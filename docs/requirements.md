@@ -58,6 +58,11 @@ Filter server-side (in the Action) to AML/compliance/financial-crime relevance â
 the site renders what it's given, no client-side relevance logic.
 Unknown fields tolerated (forward compatibility); `schemaVersion` bumps on
 breaking change, and the site shows a graceful "feed updating" state on mismatch.
+S1 amendment (2026-07-19, Salman): `generatedAt` moves to a sibling
+`jobs-meta.json` (`schemaVersion`, `generatedAt`, `jobCount`) so an
+unchanged job list produces a byte-identical jobs.json and the publish step
+can skip the feed commit; meta is updated every successful run and is the
+source for the "as of" / staleness display.
 4. Pages (v1)
 Home â€” hero: what AML North is (one paragraph, plain language), three cards
 (Jobs / Report Studio / Certifications), a short "who built this" with LinkedIn +
