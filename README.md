@@ -49,9 +49,9 @@ Node 22 (`.nvmrc`).
 ## Deployment — Cloudflare Pages
 
 The repo side is ready: build is plain Vite (`npm run build` → `dist/`),
-SPA routing needs no redirect rules (Pages serves `index.html` for unknown
-routes when no `404.html` exists), and `public/_headers` sets caching and
-CORS for the feed.
+`public/_redirects` provides the SPA fallback (serve `index.html` for
+client-side routes like `/jobs` so a deep link or refresh resolves instead
+of 404ing), and `public/_headers` sets caching and CORS for the feed.
 
 ### One-time dashboard setup (manual)
 

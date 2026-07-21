@@ -1,0 +1,4 @@
+# SPA fallback: serve index.html for client-side routes (/jobs, /studio, …)
+# so a deep link or refresh resolves instead of 404ing. Real assets and the
+# feed files are matched before this catch-all.
+/*    /index.html    200
