@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
 
 const routes: Array<[path: string, heading: string]> = [
@@ -11,8 +11,15 @@ const routes: Array<[path: string, heading: string]> = [
   ['/legal', 'Terms & Privacy'],
 ];
 
+// The jobs page fetches on mount; keep the shell test offline so it exercises
+// only routing. findByRole below flushes the resulting state update.
+beforeEach(() => {
+  vi.stubGlobal('fetch', vi.fn(() => Promise.reject(new Error('offline in test'))));
+});
+afterEach(() => vi.unstubAllGlobals());
+
 describe('routing shell', () => {
-  it.each(routes)('renders %s', (path, heading) => {
+  it.each(routes)('renders %s', async (path, heading) => {
     render(
       <MemoryRouter
         initialEntries={[path]}
@@ -21,6 +28,6 @@ describe('routing shell', () => {
         <App />
       </MemoryRouter>,
     );
-    expect(screen.getByRole('heading', { level: 1, name: heading })).toBeInTheDocument();
+    expect(await screen.findByRole('heading', { level: 1, name: heading })).toBeInTheDocument();
   });
 });
