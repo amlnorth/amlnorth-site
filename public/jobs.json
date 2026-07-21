@@ -14,6 +14,18 @@
       "source": "workday-bmo"
     },
     {
+      "id": "d54d4e1fa9d932f3",
+      "title": "Monitoring and Testing Specialist, Enterprise AML",
+      "company": "BMO",
+      "location": "Toronto, ON, CAN",
+      "workModel": null,
+      "seniority": "analyst",
+      "postedAt": "2026-07-21T00:00:00Z",
+      "firstSeenAt": "2026-07-21T22:57:18Z",
+      "url": "https://bmo.wd3.myworkdayjobs.com/en-US/External/job/Toronto-ON-CAN/Monitoring-and-Testing-Specialist--Enterprise-AML_R260021424",
+      "source": "workday-bmo"
+    },
+    {
       "id": "a2ed737dd7151e63",
       "title": "Senior Manager Model Validation-AML and Fraud Models",
       "company": "BMO",
@@ -47,6 +59,18 @@
       "postedAt": "2026-07-09T00:00:00Z",
       "firstSeenAt": "2026-07-09T23:12:24Z",
       "url": "https://cibc.wd3.myworkdayjobs.com/en-US/search/job/Toronto-ON/Senior-Consultant--Enterprise-AML-Strategy---Reporting--6-month-Secondment-Contract-_2610765",
+      "source": "workday-cibc"
+    },
+    {
+      "id": "d4160c4df253d665",
+      "title": "Sr. Analyst, AML",
+      "company": "CIBC",
+      "location": "Toronto, ON",
+      "workModel": null,
+      "seniority": "senior",
+      "postedAt": "2026-07-21T00:00:00Z",
+      "firstSeenAt": "2026-07-21T22:57:22Z",
+      "url": "https://cibc.wd3.myworkdayjobs.com/en-US/search/job/Toronto-ON/Sr-Analyst--AML_2614113-1",
       "source": "workday-cibc"
     },
     {
