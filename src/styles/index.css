@@ -4,3 +4,10 @@
 :root {
   color-scheme: light dark;
 }
+
+/* Paint the page background from the token before React mounts, so switching
+   OS theme (or an explicit choice applied in main.tsx) never flashes. */
+html {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+}

@@ -30,4 +30,18 @@ describe('routing shell', () => {
     );
     expect(await screen.findByRole('heading', { level: 1, name: heading })).toBeInTheDocument();
   });
+
+  it('renders the NotFound page for an unknown route', async () => {
+    render(
+      <MemoryRouter
+        initialEntries={['/no-such-page']}
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
+        <App />
+      </MemoryRouter>,
+    );
+    expect(
+      await screen.findByRole('heading', { level: 1, name: 'Page not found' }),
+    ).toBeInTheDocument();
+  });
 });

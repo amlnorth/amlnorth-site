@@ -12,3 +12,11 @@
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: DENY
+  # Self-only. The built site loads zero external resources — Vite emits an
+  # external module script and an external stylesheet (both same-origin, no
+  # inline <style>/<script>), the theme is applied via the CSSOM (not inline
+  # styles), and the only cross-origin traffic is user-initiated link
+  # navigation (job postings, LinkedIn/GitHub), which CSP does not gate.
+  # img-src allows data: for the inline SVG favicon fallback.
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self'; upgrade-insecure-requests

@@ -155,4 +155,22 @@ describe('Jobs page', () => {
     render(<Jobs />);
     expect(await screen.findByText(/No roles are open right now/)).toBeInTheDocument();
   });
+
+  it('has a valid heading order (no skipped levels) with cards present', async () => {
+    stubFeed(FEED, meta('2026-07-20T11:00:00Z'));
+    render(<Jobs />);
+    await screen.findByRole('list', { name: 'Open roles' });
+
+    const levels = screen
+      .getAllByRole('heading')
+      .map((h) => Number(h.getAttribute('aria-level') ?? h.tagName[1]));
+
+    expect(levels[0]).toBe(1); // page starts at h1
+    // h1 (Jobs) → h2 (Open roles) → h3 (each card): never jump down by >1.
+    for (let i = 1; i < levels.length; i += 1) {
+      expect(levels[i] - levels[i - 1]).toBeLessThanOrEqual(1);
+    }
+    expect(levels).toContain(2);
+    expect(levels).toContain(3);
+  });
 });

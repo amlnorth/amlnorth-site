@@ -106,11 +106,16 @@ function JobsReady({ jobs, now }: { jobs: Job[]; now: Date }) {
           <NoResults onClear={() => setFilters(EMPTY_FILTERS)} />
         </div>
       ) : (
-        <ul aria-label="Open roles" className="mt-4 grid gap-3">
-          {visible.map((job) => (
-            <JobCard key={job.id} job={job} now={now} />
-          ))}
-        </ul>
+        <>
+          <h2 id="open-roles-heading" className="sr-only">
+            Open roles
+          </h2>
+          <ul aria-labelledby="open-roles-heading" className="mt-4 grid gap-3">
+            {visible.map((job) => (
+              <JobCard key={job.id} job={job} now={now} />
+            ))}
+          </ul>
+        </>
       )}
     </div>
   );
