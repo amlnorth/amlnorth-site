@@ -5,3 +5,7 @@ coverage/
 .env
 .env.*
 .DS_Store
+
+# Internal content draft (carries review notes) — the finished copy lives in
+# src/pages/Certifications.tsx; keep the source out of the public repo.
+docs/certifications-content-v2.md
