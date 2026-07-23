@@ -4,9 +4,8 @@ import { GITHUB_URL, LINKEDIN_URL } from '../lib/site';
 interface HomeCard {
   title: string;
   blurb: string;
-  to?: string;
-  cta?: string;
-  comingSoon?: boolean;
+  to: string;
+  cta: string;
 }
 
 const cards: HomeCard[] = [
@@ -27,8 +26,9 @@ const cards: HomeCard[] = [
   {
     title: 'Certifications',
     blurb:
-      'A plain-language guide to CAMS, CAMS-FCI, CFE and CPAML — real costs in CAD and what Canadian banks actually ask for.',
-    comingSoon: true,
+      "A practitioner's plain-language read on CAMS, CAMS-FCI, CFE and CPAML — which credentials Canadian banks actually value, and which to skip.",
+    to: '/certifications',
+    cta: 'Read the guide',
   },
 ];
 
@@ -54,24 +54,16 @@ export default function Home() {
             className="relative flex flex-col rounded-lg border border-border bg-surface p-5 transition-colors focus-within:border-accent hover:border-accent"
           >
             <h2 className="text-lg font-medium">
-              {card.to ? (
-                <Link
-                  to={card.to}
-                  className="after:absolute after:inset-0 after:rounded-lg after:content-[''] focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-accent"
-                >
-                  {card.title}
-                </Link>
-              ) : (
-                card.title
-              )}
+              <Link
+                to={card.to}
+                className="after:absolute after:inset-0 after:rounded-lg after:content-[''] focus-visible:outline-none focus-visible:after:ring-2 focus-visible:after:ring-accent"
+              >
+                {card.title}
+              </Link>
             </h2>
             <p className="mt-2 grow text-sm text-muted">{card.blurb}</p>
             <p className="mt-4 text-sm font-medium text-accent">
-              {card.comingSoon ? (
-                <span className="text-muted">Coming soon</span>
-              ) : (
-                <span aria-hidden="true">{card.cta} →</span>
-              )}
+              <span aria-hidden="true">{card.cta} →</span>
             </p>
           </li>
         ))}
