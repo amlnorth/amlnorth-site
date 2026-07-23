@@ -50,6 +50,18 @@
       "source": "workday-cibc"
     },
     {
+      "id": "014094ae3d7c2d5e",
+      "title": "Sr. Analyst, AML",
+      "company": "CIBC",
+      "location": "Toronto, ON",
+      "workModel": null,
+      "seniority": "senior",
+      "postedAt": "2026-07-23T00:00:00Z",
+      "firstSeenAt": "2026-07-23T22:57:07Z",
+      "url": "https://cibc.wd3.myworkdayjobs.com/en-US/search/job/Toronto-ON/Sr-Analyst--AML_2614667",
+      "source": "workday-cibc"
+    },
+    {
       "id": "d4160c4df253d665",
       "title": "Sr. Analyst, AML",
       "company": "CIBC",
@@ -134,6 +146,18 @@
       "source": "phenom-rbc"
     },
     {
+      "id": "587fdd5e8302d3a4",
+      "title": "Senior Manager, AML Model Validation",
+      "company": "RBC",
+      "location": "TORONTO, Ontario, Canada",
+      "workModel": null,
+      "seniority": "manager",
+      "postedAt": "2026-07-23T00:00:00Z",
+      "firstSeenAt": "2026-07-23T22:57:13Z",
+      "url": "https://jobs.rbc.com/ca/en/job/R-0000180706",
+      "source": "phenom-rbc"
+    },
+    {
       "id": "8eaa861a0329419b",
       "title": "Financial Crime Risk Investigation Support Officer II (5234)",
       "company": "TD Bank",
@@ -179,6 +203,18 @@
       "postedAt": "2026-07-14T00:00:00Z",
       "firstSeenAt": "2026-07-14T22:56:42Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Group-Manager--Financial-Crime-Risk-Investigation--5182-_R_1499011-1",
+      "source": "workday-td-bank"
+    },
+    {
+      "id": "5e67296f931c6ee4",
+      "title": "Manager, Financial Crime Risk Investigation (5142)",
+      "company": "TD Bank",
+      "location": "Toronto, Ontario",
+      "workModel": null,
+      "seniority": "manager",
+      "postedAt": "2026-07-23T00:00:00Z",
+      "firstSeenAt": "2026-07-23T22:56:49Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Manager--Financial-Crime-Risk-Investigation--5142-_R_1501530-1",
       "source": "workday-td-bank"
     },
     {
