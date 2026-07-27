@@ -26,7 +26,7 @@ export default function Jobs() {
   const state = useJobsFeed();
 
   useEffect(() => {
-    document.title = 'Jobs · AML North';
+    document.title = 'AML Jobs — AML North';
   }, []);
 
   const generatedAt = state.status === 'ready' ? state.meta.generatedAt : null;

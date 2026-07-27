@@ -46,9 +46,13 @@ export default function Studio() {
       <div className="mt-10">
         <a
           href={STUDIO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-block rounded-md bg-accent px-5 py-3 text-base font-medium text-bg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
-          Open Report Studio →
+          Open Report Studio
+          <span aria-hidden="true"> →</span>
+          <span className="sr-only"> (opens in a new tab)</span>
         </a>
       </div>
     </div>
