@@ -98,6 +98,18 @@
       "source": "phenom-rbc"
     },
     {
+      "id": "71c1ec793bc26d29",
+      "title": "Manager, AML Investigation Support",
+      "company": "RBC",
+      "location": "TORONTO, Ontario, Canada",
+      "workModel": null,
+      "seniority": "manager",
+      "postedAt": "2026-08-04T00:00:00Z",
+      "firstSeenAt": "2026-08-04T23:03:49Z",
+      "url": "https://jobs.rbc.com/ca/en/job/R-0000182144",
+      "source": "phenom-rbc"
+    },
+    {
       "id": "4b9f5caebf68cd6d",
       "title": "Manager, US AML Alert Analysis",
       "company": "RBC",
@@ -155,6 +167,30 @@
       "postedAt": "2026-07-22T00:00:00Z",
       "firstSeenAt": "2026-07-22T23:03:42Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Manager--Financial-Crime-Risk-Management_R_1501168",
+      "source": "workday-td-bank"
+    },
+    {
+      "id": "1cf12dac978be05d",
+      "title": "Manager, Financial Crime Risk Management (4851)",
+      "company": "TD Bank",
+      "location": "Toronto, Ontario",
+      "workModel": null,
+      "seniority": "manager",
+      "postedAt": "2026-08-04T00:00:00Z",
+      "firstSeenAt": "2026-07-20T23:00:46Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Manager--Financial-Crime-Risk-Management--4851-_R_1500470-1",
+      "source": "workday-td-bank"
+    },
+    {
+      "id": "8dce64dbc762e3e2",
+      "title": "Manager, Financial Crime Risk Management (4852)",
+      "company": "TD Bank",
+      "location": "Toronto, Ontario",
+      "workModel": null,
+      "seniority": "manager",
+      "postedAt": "2026-08-04T00:00:00Z",
+      "firstSeenAt": "2026-07-20T23:00:46Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Manager--Financial-Crime-Risk-Management--4852-_R_1500473-1",
       "source": "workday-td-bank"
     },
     {
