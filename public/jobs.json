@@ -8,7 +8,7 @@
       "location": "Toronto, ON",
       "workModel": null,
       "seniority": "director",
-      "postedAt": "2026-07-27T00:00:00Z",
+      "postedAt": "2026-07-28T00:00:00Z",
       "firstSeenAt": "2026-07-27T23:01:44Z",
       "url": "https://cibc.wd3.myworkdayjobs.com/en-US/search/job/Toronto-ON/Senior-Director--Compliance---EAML-Examination-Program_2615519",
       "source": "workday-cibc"
@@ -20,7 +20,7 @@
       "location": "Toronto, ON",
       "workModel": null,
       "seniority": "senior",
-      "postedAt": "2026-07-29T00:00:00Z",
+      "postedAt": "2026-07-30T00:00:00Z",
       "firstSeenAt": "2026-07-29T22:59:34Z",
       "url": "https://cibc.wd3.myworkdayjobs.com/en-US/search/job/Toronto-ON/Sr-Analyst--AML---12-month-secondment_2614666",
       "source": "workday-cibc"
@@ -104,7 +104,7 @@
       "location": "Toronto, Ontario",
       "workModel": null,
       "seniority": "senior",
-      "postedAt": "2026-07-31T00:00:00Z",
+      "postedAt": "2026-08-01T00:00:00Z",
       "firstSeenAt": "2026-07-31T23:00:00Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Senior-Financial-Crime-Risk-Analyst--FCRM-Quality-Assurance---Detection-----5199-_R_1502058",
       "source": "workday-td-bank"
@@ -116,9 +116,21 @@
       "location": "Toronto, Ontario",
       "workModel": null,
       "seniority": "senior",
-      "postedAt": "2026-07-24T00:00:00Z",
+      "postedAt": "2026-07-25T00:00:00Z",
       "firstSeenAt": "2026-07-10T22:59:12Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Senior-Financial-Crime-Risk-Business-Oversight-Analyst--4771-_R_1479171",
+      "source": "workday-td-bank"
+    },
+    {
+      "id": "7cabe5e59c228ab6",
+      "title": "Senior Financial Crime Risk Investigator (5120)",
+      "company": "TD Bank",
+      "location": "Markham, Ontario",
+      "workModel": null,
+      "seniority": "senior",
+      "postedAt": "2026-08-07T00:00:00Z",
+      "firstSeenAt": "2026-06-25T23:18:32Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Markham-Ontario/Senior-Financial-Crime-Risk-Investigator--5120-_R_1496684",
       "source": "workday-td-bank"
     },
     {
