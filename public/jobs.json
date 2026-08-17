@@ -38,6 +38,18 @@
       "source": "phenom-rbc"
     },
     {
+      "id": "960e6ad12ae26488",
+      "title": "Manager, AML Investigations",
+      "company": "RBC",
+      "location": "TORONTO, Ontario, Canada",
+      "workModel": null,
+      "seniority": "manager",
+      "postedAt": "2026-08-17T00:00:00Z",
+      "firstSeenAt": "2026-08-17T22:24:14Z",
+      "url": "https://jobs.rbc.com/ca/en/job/R-0000183711",
+      "source": "phenom-rbc"
+    },
+    {
       "id": "bb36602fee49fb1e",
       "title": "Manager, AML Model Testing",
       "company": "RBC",
@@ -59,6 +71,18 @@
       "postedAt": "2026-08-13T00:00:00Z",
       "firstSeenAt": "2026-08-13T22:41:16Z",
       "url": "https://jobs.rbc.com/ca/en/job/R-0000182655",
+      "source": "phenom-rbc"
+    },
+    {
+      "id": "31b990e5e4af3827",
+      "title": "Manager- AML Investigations",
+      "company": "RBC",
+      "location": "TORONTO, Ontario, Canada",
+      "workModel": null,
+      "seniority": "manager",
+      "postedAt": "2026-08-17T00:00:00Z",
+      "firstSeenAt": "2026-08-17T22:24:14Z",
+      "url": "https://jobs.rbc.com/ca/en/job/R-0000183721",
       "source": "phenom-rbc"
     },
     {
@@ -119,6 +143,18 @@
       "postedAt": "2026-08-12T00:00:00Z",
       "firstSeenAt": "2026-07-06T23:08:10Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Financial-Crime-Risk-Investigative-Analyst_R_1484680",
+      "source": "workday-td-bank"
+    },
+    {
+      "id": "de8ff51751d85d40",
+      "title": "Financial Crime Risk Investigator I (5264)",
+      "company": "TD Bank",
+      "location": "Markham, Ontario",
+      "workModel": null,
+      "seniority": "analyst",
+      "postedAt": "2026-08-17T00:00:00Z",
+      "firstSeenAt": "2026-08-17T22:23:45Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Markham-Ontario/Financial-Crime-Risk-Investigator-I--5264-_R_1503465",
       "source": "workday-td-bank"
     },
     {
