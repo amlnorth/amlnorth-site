@@ -26,6 +26,18 @@
       "source": "workday-cibc"
     },
     {
+      "id": "de71c74d3e71ce50",
+      "title": "Director, AML Client Exit",
+      "company": "RBC",
+      "location": "TORONTO, Ontario, Canada",
+      "workModel": null,
+      "seniority": "director",
+      "postedAt": "2026-08-18T00:00:00Z",
+      "firstSeenAt": "2026-08-18T22:23:18Z",
+      "url": "https://jobs.rbc.com/ca/en/job/R-0000184039",
+      "source": "phenom-rbc"
+    },
+    {
       "id": "1aa481dcae4c82d0",
       "title": "Manager AML Risk Analytics",
       "company": "RBC",
@@ -155,6 +167,42 @@
       "postedAt": "2026-08-17T00:00:00Z",
       "firstSeenAt": "2026-08-17T22:23:45Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Markham-Ontario/Financial-Crime-Risk-Investigator-I--5264-_R_1503465",
+      "source": "workday-td-bank"
+    },
+    {
+      "id": "67ef0bdf7aee3214",
+      "title": "Financial Crime Risk Investigator I (5329)",
+      "company": "TD Bank",
+      "location": "Markham, Ontario",
+      "workModel": null,
+      "seniority": "analyst",
+      "postedAt": "2026-08-18T00:00:00Z",
+      "firstSeenAt": "2026-08-18T22:22:47Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Markham-Ontario/Financial-Crime-Risk-Investigator-I--5329-_R_1505652",
+      "source": "workday-td-bank"
+    },
+    {
+      "id": "9ad90c89e13139ad",
+      "title": "Financial Crime Risk Investigator I, TDS Investigations (4679, 4766)",
+      "company": "TD Bank",
+      "location": "Toronto, Ontario",
+      "workModel": null,
+      "seniority": "analyst",
+      "postedAt": "2026-08-18T00:00:00Z",
+      "firstSeenAt": "2026-06-18T13:58:51Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Financial-Crime-Risk-Investigator-I--TDS-Investigations--4766--4769-_R_1487743",
+      "source": "workday-td-bank"
+    },
+    {
+      "id": "a7dd13b49b02eab3",
+      "title": "Manager, Financial Crime Risk Investigation (5331)",
+      "company": "TD Bank",
+      "location": "Toronto, Ontario",
+      "workModel": null,
+      "seniority": "manager",
+      "postedAt": "2026-08-18T00:00:00Z",
+      "firstSeenAt": "2026-08-18T22:22:48Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Manager--Financial-Crime-Risk-Investigation--5331-_R_1505601",
       "source": "workday-td-bank"
     },
     {
