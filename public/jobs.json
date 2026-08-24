@@ -98,6 +98,18 @@
       "source": "phenom-rbc"
     },
     {
+      "id": "7dc61f14b7d5e75b",
+      "title": "AML Financial Crime Risk Investigator II - Core Investigations (5122)",
+      "company": "TD Bank",
+      "location": "Markham, Ontario",
+      "workModel": null,
+      "seniority": "analyst",
+      "postedAt": "2026-08-24T00:00:00Z",
+      "firstSeenAt": "2026-08-24T22:25:49Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Markham-Ontario/AML-Financial-Crime-Risk-Investigator-II---Core-Investigations--5122-_R_1496668-1",
+      "source": "workday-td-bank"
+    },
+    {
       "id": "256e80403fc4919a",
       "title": "Counsel, Financial Crime and Enterprise Investigation",
       "company": "TD Bank",
@@ -182,6 +194,18 @@
       "source": "workday-td-bank"
     },
     {
+      "id": "3b5c2d083de1914d",
+      "title": "Senior AML IT Developer",
+      "company": "TD Bank",
+      "location": "Toronto, Ontario",
+      "workModel": null,
+      "seniority": "senior",
+      "postedAt": "2026-08-24T00:00:00Z",
+      "firstSeenAt": "2026-06-18T23:46:14Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Senior-IT-Developer_R_1493845",
+      "source": "workday-td-bank"
+    },
+    {
       "id": "3a3bff775e05f661",
       "title": "Senior Financial Crime Risk Business Oversight Analyst",
       "company": "TD Bank",
@@ -216,18 +240,6 @@
       "firstSeenAt": "2026-07-09T23:12:07Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Ottawa-Ontario/Senior-Financial-Crime-Risk-Investigator--4575-_R_1472456-1",
       "source": "workday-td-bank"
-    },
-    {
-      "id": "97bda3c263d2b89c",
-      "title": "Team Lead, AML (Crypto)",
-      "company": "Wealthsimple",
-      "location": "Toronto Headquarters",
-      "workModel": null,
-      "seniority": "senior",
-      "postedAt": "2026-07-30T00:00:00Z",
-      "firstSeenAt": "2026-07-30T23:07:37Z",
-      "url": "https://jobs.ashbyhq.com/wealthsimple/980f9710-db69-4a6d-aad7-06f557f427e0",
-      "source": "ashby-wealthsimple"
     }
   ]
 }
