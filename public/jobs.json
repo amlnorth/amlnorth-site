@@ -2,6 +2,18 @@
   "schemaVersion": 1,
   "jobs": [
     {
+      "id": "c31376ffa1ca653d",
+      "title": "AML Investigator",
+      "company": "RBC",
+      "location": "TORONTO, Ontario, Canada",
+      "workModel": null,
+      "seniority": "analyst",
+      "postedAt": "2026-08-25T00:00:00Z",
+      "firstSeenAt": "2026-08-25T22:27:06Z",
+      "url": "https://jobs.rbc.com/ca/en/job/R-0000185285",
+      "source": "phenom-rbc"
+    },
+    {
       "id": "de71c74d3e71ce50",
       "title": "Director, AML Client Exit",
       "company": "RBC",
@@ -84,6 +96,18 @@
       "firstSeenAt": "2026-08-12T22:40:33Z",
       "url": "https://jobs.rbc.com/ca/en/job/R-0000182670",
       "source": "phenom-rbc"
+    },
+    {
+      "id": "256e80403fc4919a",
+      "title": "Counsel, Financial Crime and Enterprise Investigation-Criminal Production Order Fulfillment Team",
+      "company": "TD Bank",
+      "location": "Toronto, Ontario",
+      "workModel": null,
+      "seniority": null,
+      "postedAt": "2026-08-25T00:00:00Z",
+      "firstSeenAt": "2026-08-10T22:36:52Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Counsel--Financial-Crime-and-Enterprise-Investigation_R_1502495",
+      "source": "workday-td-bank"
     },
     {
       "id": "52ff84895a793409",
