@@ -2,6 +2,18 @@
   "schemaVersion": 1,
   "jobs": [
     {
+      "id": "71c54c88d282343b",
+      "title": "Sr. Analyst, AML",
+      "company": "CIBC",
+      "location": "Toronto, ON",
+      "workModel": null,
+      "seniority": "senior",
+      "postedAt": "2026-09-04T00:00:00Z",
+      "firstSeenAt": "2026-09-04T23:46:24Z",
+      "url": "https://cibc.wd3.myworkdayjobs.com/en-US/search/job/Toronto-ON/Sr-Analyst--AML_2618071",
+      "source": "workday-cibc"
+    },
+    {
       "id": "aa193c3e005f949e",
       "title": "2027 Winter - GRM, Global AML Metrics Reporting Analyst (4 Months)",
       "company": "RBC",
