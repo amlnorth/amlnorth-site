@@ -14,6 +14,18 @@
       "source": "workday-cibc"
     },
     {
+      "id": "898b7b5228aaabb0",
+      "title": "Sr. Analyst, AML Triage (10 Months Fixed Term)",
+      "company": "CIBC",
+      "location": "Toronto, ON",
+      "workModel": null,
+      "seniority": "senior",
+      "postedAt": "2026-09-08T00:00:00Z",
+      "firstSeenAt": "2026-09-08T23:52:48Z",
+      "url": "https://cibc.wd3.myworkdayjobs.com/en-US/search/job/Toronto-ON/Sr-Analyst--AML-Triage--10-Months-Fixed-Term-_2618212",
+      "source": "workday-cibc"
+    },
+    {
       "id": "aa193c3e005f949e",
       "title": "2027 Winter - GRM, Global AML Metrics Reporting Analyst (4 Months)",
       "company": "RBC",
@@ -60,6 +72,30 @@
       "firstSeenAt": "2026-06-18T13:59:14Z",
       "url": "https://jobs.rbc.com/ca/en/job/R-0000155401",
       "source": "phenom-rbc"
+    },
+    {
+      "id": "edf3a03a4f448739",
+      "title": "AML Financial Crime Risk Investigator I (5388)",
+      "company": "TD Bank",
+      "location": "Markham, Ontario",
+      "workModel": null,
+      "seniority": "analyst",
+      "postedAt": "2026-09-08T00:00:00Z",
+      "firstSeenAt": "2026-09-08T23:52:21Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Markham-Ontario/AML-Financial-Crime-Risk-Investigator-I--5388-_R_1506913",
+      "source": "workday-td-bank"
+    },
+    {
+      "id": "38f710fc10f36686",
+      "title": "AVP, Head of Financial Crime Risk Management, Name Screening & AI Capabilities",
+      "company": "TD Bank",
+      "location": "Toronto, Ontario",
+      "workModel": null,
+      "seniority": "director",
+      "postedAt": "2026-09-08T00:00:00Z",
+      "firstSeenAt": "2026-09-08T23:52:21Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/AVP--Head-of-Financial-Crime-Risk-Management--Name-Screening---AI-Capabilities_R_1505829-1",
+      "source": "workday-td-bank"
     },
     {
       "id": "256e80403fc4919a",
