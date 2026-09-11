@@ -38,18 +38,6 @@
       "source": "phenom-rbc"
     },
     {
-      "id": "22e46fdfb7e07127",
-      "title": "AML Investigator",
-      "company": "RBC",
-      "location": "TORONTO, Ontario, Canada",
-      "workModel": null,
-      "seniority": "analyst",
-      "postedAt": "2026-09-07T00:00:00Z",
-      "firstSeenAt": "2026-09-08T14:50:58Z",
-      "url": "https://jobs.rbc.com/ca/en/job/R-0000186053",
-      "source": "phenom-rbc"
-    },
-    {
       "id": "de71c74d3e71ce50",
       "title": "Director, AML Client Exit",
       "company": "RBC",
@@ -59,6 +47,18 @@
       "postedAt": "2026-08-18T00:00:00Z",
       "firstSeenAt": "2026-08-18T22:23:18Z",
       "url": "https://jobs.rbc.com/ca/en/job/R-0000184039",
+      "source": "phenom-rbc"
+    },
+    {
+      "id": "859178c533a5b28b",
+      "title": "Manager, AML Investigation Support",
+      "company": "RBC",
+      "location": "TORONTO, Ontario, Canada",
+      "workModel": null,
+      "seniority": "manager",
+      "postedAt": "2026-09-11T00:00:00Z",
+      "firstSeenAt": "2026-09-11T14:45:16Z",
+      "url": "https://jobs.rbc.com/ca/en/job/R-0000187244",
       "source": "phenom-rbc"
     },
     {
@@ -86,6 +86,18 @@
       "source": "workday-td-bank"
     },
     {
+      "id": "7443dc788f7d08fe",
+      "title": "AML Financial Crime Risk Investigator II (5478)",
+      "company": "TD Bank",
+      "location": "Ottawa, Ontario",
+      "workModel": null,
+      "seniority": "analyst",
+      "postedAt": "2026-09-11T00:00:00Z",
+      "firstSeenAt": "2026-09-11T14:44:42Z",
+      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Ottawa-Ontario/AML-Financial-Crime-Risk-Investigator-II--5478-_R_1510327",
+      "source": "workday-td-bank"
+    },
+    {
       "id": "38f710fc10f36686",
       "title": "AVP, Head of Financial Crime Risk Management, Name Screening & AI Capabilities",
       "company": "TD Bank",
@@ -95,30 +107,6 @@
       "postedAt": "2026-09-08T00:00:00Z",
       "firstSeenAt": "2026-09-08T23:52:21Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/AVP--Head-of-Financial-Crime-Risk-Management--Name-Screening---AI-Capabilities_R_1505829-1",
-      "source": "workday-td-bank"
-    },
-    {
-      "id": "256e80403fc4919a",
-      "title": "Counsel, Financial Crime and Enterprise Investigation-Criminal Production Order Fulfillment Team",
-      "company": "TD Bank",
-      "location": "Toronto, Ontario",
-      "workModel": null,
-      "seniority": null,
-      "postedAt": "2026-08-25T00:00:00Z",
-      "firstSeenAt": "2026-08-10T22:36:52Z",
-      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Counsel--Financial-Crime-and-Enterprise-Investigation_R_1502495",
-      "source": "workday-td-bank"
-    },
-    {
-      "id": "29ea1922cf1ef81e",
-      "title": "Data Scientist – Financial Crime Risk Management (FCRM)",
-      "company": "TD Bank",
-      "location": "Toronto, Ontario",
-      "workModel": null,
-      "seniority": null,
-      "postedAt": "2026-08-28T00:00:00Z",
-      "firstSeenAt": "2026-07-31T22:59:57Z",
-      "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Senior-Analyst--Trading-Surveillance_R_1451161-1",
       "source": "workday-td-bank"
     },
     {
