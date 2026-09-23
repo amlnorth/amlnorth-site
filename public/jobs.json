@@ -8,10 +8,22 @@
       "location": "Toronto, ON",
       "workModel": null,
       "seniority": "director",
-      "postedAt": "2026-09-17T00:00:00Z",
+      "postedAt": "2026-09-18T00:00:00Z",
       "firstSeenAt": "2026-09-17T23:56:21Z",
       "url": "https://cibc.wd3.myworkdayjobs.com/en-US/search/job/Toronto-ON/Senior-Director--AML-Advisory_2618571",
       "source": "workday-cibc"
+    },
+    {
+      "id": "73b41a755a34e24a",
+      "title": "AML Manager",
+      "company": "RBC",
+      "location": "TORONTO, Ontario, Canada",
+      "workModel": null,
+      "seniority": "manager",
+      "postedAt": "2026-09-22T00:00:00Z",
+      "firstSeenAt": "2026-09-23T00:02:53Z",
+      "url": "https://jobs.rbc.com/ca/en/job/R-0000188267",
+      "source": "phenom-rbc"
     },
     {
       "id": "859178c533a5b28b",
@@ -44,7 +56,7 @@
       "location": "Toronto, Ontario",
       "workModel": null,
       "seniority": "analyst",
-      "postedAt": "2026-09-16T00:00:00Z",
+      "postedAt": "2026-09-17T00:00:00Z",
       "firstSeenAt": "2026-09-17T00:09:03Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/AML-Financial-Crime-Risk-Investigator-I--5523-_R_1510993",
       "source": "workday-td-bank"
@@ -56,7 +68,7 @@
       "location": "Markham, Ontario",
       "workModel": null,
       "seniority": "analyst",
-      "postedAt": "2026-09-16T00:00:00Z",
+      "postedAt": "2026-09-17T00:00:00Z",
       "firstSeenAt": "2026-09-17T00:09:03Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Markham-Ontario/AML-Financial-Crime-Risk-Investigator-I--5525-_R_1511426",
       "source": "workday-td-bank"
@@ -68,7 +80,7 @@
       "location": "Ottawa, Ontario",
       "workModel": null,
       "seniority": "analyst",
-      "postedAt": "2026-09-11T00:00:00Z",
+      "postedAt": "2026-09-12T00:00:00Z",
       "firstSeenAt": "2026-09-11T14:44:42Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Ottawa-Ontario/AML-Financial-Crime-Risk-Investigator-II--5478-_R_1510327",
       "source": "workday-td-bank"
@@ -80,7 +92,7 @@
       "location": "Toronto, Ontario",
       "workModel": null,
       "seniority": "manager",
-      "postedAt": "2026-09-14T00:00:00Z",
+      "postedAt": "2026-09-15T00:00:00Z",
       "firstSeenAt": "2026-09-15T00:20:32Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Audit-Manager-I--Financial-Crimes-Fraud-and-Insider-Risk--1160-_R_1510176",
       "source": "workday-td-bank"
@@ -92,7 +104,7 @@
       "location": "Toronto, Ontario",
       "workModel": null,
       "seniority": "manager",
-      "postedAt": "2026-09-16T00:00:00Z",
+      "postedAt": "2026-09-17T00:00:00Z",
       "firstSeenAt": "2026-09-16T15:13:56Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Audit-Manager-II---Financial-Crimes-Fraud-and-Insider-Risk--1159-_R_1510189",
       "source": "workday-td-bank"
@@ -104,7 +116,7 @@
       "location": "Toronto, Ontario",
       "workModel": null,
       "seniority": "analyst",
-      "postedAt": "2026-08-31T00:00:00Z",
+      "postedAt": "2026-09-01T00:00:00Z",
       "firstSeenAt": "2026-07-06T23:08:10Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Financial-Crime-Risk-Investigative-Analyst_R_1484680",
       "source": "workday-td-bank"
@@ -116,7 +128,7 @@
       "location": "Toronto, Ontario",
       "workModel": null,
       "seniority": "analyst",
-      "postedAt": "2026-09-22T00:00:00Z",
+      "postedAt": "2026-09-23T00:00:00Z",
       "firstSeenAt": "2026-09-22T15:18:04Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Financial-Crime-Risk-Investigator-I--5512--5513-_R_1512353-1",
       "source": "workday-td-bank"
@@ -128,7 +140,7 @@
       "location": "Toronto, Ontario",
       "workModel": null,
       "seniority": "manager",
-      "postedAt": "2026-09-16T00:00:00Z",
+      "postedAt": "2026-09-17T00:00:00Z",
       "firstSeenAt": "2026-09-16T15:14:02Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Senior-Audit-Group-Manager--Financial-Crimes-Fraud-and-Insider-Risk--1160-_R_1510172",
       "source": "workday-td-bank"
