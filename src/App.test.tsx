@@ -31,6 +31,24 @@ describe('routing shell', () => {
     expect(await screen.findByRole('heading', { level: 1, name: heading })).toBeInTheDocument();
   });
 
+  it.each([
+    ['/', 'Email'],
+    ['/legal', 'hello@amlnorth.ca'],
+  ])('links the contact address from %s', async (path, name) => {
+    render(
+      <MemoryRouter
+        initialEntries={[path]}
+        future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+      >
+        <App />
+      </MemoryRouter>,
+    );
+    expect(await screen.findByRole('link', { name })).toHaveAttribute(
+      'href',
+      'mailto:hello@amlnorth.ca',
+    );
+  });
+
   it('renders the NotFound page for an unknown route', async () => {
     render(
       <MemoryRouter

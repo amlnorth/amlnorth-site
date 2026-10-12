@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { GITHUB_URL, LINKEDIN_URL } from '../lib/site';
+import { CONTACT_MAILTO, GITHUB_URL, LINKEDIN_URL } from '../lib/site';
 
 interface HomeCard {
   title: string;
@@ -93,6 +93,12 @@ export default function Home() {
             className="text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
             GitHub
+          </a>
+          <a
+            href={CONTACT_MAILTO}
+            className="text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+          >
+            Email
           </a>
         </p>
       </section>

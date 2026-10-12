@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import { CONTACT_EMAIL, CONTACT_MAILTO } from '../lib/site';
 
 export default function Legal() {
   return (
     <div className="mx-auto max-w-2xl">
       <h1 className="text-3xl font-semibold tracking-tight">Terms &amp; Privacy</h1>
-      <p className="mt-4 text-muted">Short and honest. Last updated July 2026.</p>
+      <p className="mt-4 text-muted">Short and honest. Last updated October 2026.</p>
 
       <div className="mt-8 grid gap-6 text-base">
         <section>
@@ -47,6 +48,18 @@ export default function Legal() {
             Nothing here is legal, compliance, or financial advice. Report Studio helps prepare
             reports; it does not submit them, and you remain responsible for their accuracy and
             filing.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-medium">Contact</h2>
+          <p className="mt-2 text-muted">
+            Questions about sponsorship or consulting, or feedback on the jobs feed or Report
+            Studio, are welcome at{' '}
+            <a href={CONTACT_MAILTO} className="text-accent">
+              {CONTACT_EMAIL}
+            </a>
+            .
           </p>
         </section>
       </div>
