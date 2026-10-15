@@ -17,6 +17,7 @@ export function storedTheme(): Theme | null {
 }
 
 export function systemTheme(): Theme {
+  if (typeof window === 'undefined') return 'light'; // prerendering
   return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
@@ -39,7 +40,9 @@ export function setTheme(theme: Theme): void {
 }
 
 /**
- * Apply a stored preference before first paint (called from main.tsx). With no
+ * Apply a stored preference (called from main.tsx). public/theme-init.js does
+ * the same before first paint, since prerendered pages paint before the app
+ * bundle runs; this keeps dev and any non-prerendered entry correct. With no
  * stored preference, color-scheme is left at its default (`light dark`), so
  * prefers-color-scheme governs and there is no flash.
  */

@@ -1,0 +1,4 @@
+Contact: mailto:hello@amlnorth.ca
+Expires: 2027-10-14T00:00:00Z
+Preferred-Languages: en
+Canonical: https://amlnorth.ca/.well-known/security.txt

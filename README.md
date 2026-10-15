@@ -72,7 +72,7 @@ The tokens are shared with Report Studio so the two read as one product line.
 npm install
 npm run dev      # local dev server
 npm test         # Vitest, single run
-npm run build    # type-check + production build → dist/
+npm run build    # type-check + production build + prerender → dist/
 ```
 
 Node 22 (`.nvmrc`).
@@ -81,13 +81,46 @@ Node 22 (`.nvmrc`).
 
 The repo is deploy-ready: `npm run build` emits `dist/`, and a strict,
 self-only Content-Security-Policy plus caching/CORS for the feed live in
-[public/_headers](public/_headers). Routing:
+[public/_headers](public/_headers).
 
-- `public/_redirects` rewrites the known client routes to the SPA shell (200).
-- The build copies `index.html` → `404.html`, so any unknown path is served by
-  Cloudflare with a real **404** (not a 200 with the app shell) while still
-  booting into a styled "page not found".
-- `public/robots.txt` and `public/sitemap.xml` are real static files.
+### Prerendering: finished HTML per route, no framework
+
+The app is a client-side React SPA, but crawlers and link previews shouldn't
+have to run JS to see it. The build prerenders every route to static HTML:
+
+1. `vite build` — the normal client bundle.
+2. `vite build --ssr src/entry-server.tsx` — the same app bundled for Node.
+3. [scripts/prerender.mjs](scripts/prerender.mjs) renders each route with
+   `react-dom/server` into the built `index.html`, writing `index.html`,
+   `jobs.html`, `studio.html`, `certifications.html`, `legal.html`, a
+   `404.html`, and `sitemap.xml`.
+
+Each file carries its own title, description, canonical, and Open Graph/Twitter
+tags from one table, [src/lib/seo.ts](src/lib/seo.ts), and the home page adds
+Organization JSON-LD. `/jobs` is rendered from `public/jobs.json` as of the
+build. Every feed push triggers a Pages rebuild, so the static list tracks the
+feed. The browser then **hydrates** that markup and behaves exactly as the SPA
+always has. `/jobs` still fetches the live feed after load.
+
+Hydration needs the first client render to match the HTML, so anything that
+depends on the visitor's browser waits until after hydration: their clock for
+relative dates, their locale for date tooltips, and their saved theme for the
+toggle's label. The tests hydrate every prerendered page and fail on any
+mismatch. No new dependencies; the CSP is unchanged. JSON-LD and the embedded
+feed are non-executable `<script>` data blocks, and a tiny external
+`theme-init.js` applies a saved theme before first paint without inline script.
+
+Routing:
+
+- Pages serves `jobs.html` at `/jobs`, so there are no `_redirects` rewrites.
+  Pages applies redirect rules even when a file exists, so a rewrite to
+  `/index.html` would serve the home page's HTML at `/jobs`.
+- Any unknown path gets the prerendered `404.html` (`noindex`) with a real
+  **404** status, and it hydrates into the styled "page not found".
+- `public/robots.txt` and `public/.well-known/security.txt` are static files;
+  `sitemap.xml` is generated with a `<lastmod>` per route (authored pages from
+  `seo.ts`, `/jobs` from the newest job's `firstSeenAt`, so it moves only when a
+  new role appears).
 
 ### One-time dashboard setup (manual)
 

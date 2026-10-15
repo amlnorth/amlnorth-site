@@ -1,5 +1,6 @@
 import { NavLink, Route, Routes } from 'react-router-dom';
 import { ThemeToggle } from './components/ThemeToggle';
+import { useRouteMeta } from './hooks/useRouteMeta';
 import Home from './pages/Home';
 import Jobs from './pages/Jobs';
 import Studio from './pages/Studio';
@@ -16,6 +17,8 @@ const nav = [
 ];
 
 export default function App() {
+  useRouteMeta();
+
   return (
     <div className="min-h-screen bg-bg font-sans text-fg">
       <header className="border-b border-border">

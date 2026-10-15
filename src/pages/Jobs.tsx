@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { JobCard } from '../components/jobs/JobCard';
 import {
   JobFilters,
@@ -14,20 +14,30 @@ import {
   NoResults,
   StaleNote,
 } from '../components/jobs/FeedStates';
+import { useHydrated } from '../hooks/useHydrated';
 import { useJobsFeed } from '../hooks/useJobsFeed';
-import { isStale } from '../lib/feed';
+import { isStale, type FeedResult } from '../lib/feed';
 import { formatRelative, resolveFreshness } from '../lib/freshness';
-import { collapseWhitespace, SENIORITY_ORDER, type Job } from '../lib/jobs';
+import { collapseWhitespace, JOBS_SCHEMA_VERSION, SENIORITY_ORDER, type Job } from '../lib/jobs';
+import { usePrerenderData, type JobsSnapshot } from '../lib/prerender';
 
 const EMPTY_FILTERS: FilterValues = { query: '', company: '', seniority: '' };
 
-export default function Jobs() {
-  const [now] = useState(() => new Date());
-  const state = useJobsFeed();
+/** The same states loadFeed() yields, applied to the build-time feed. */
+function snapshotResult({ feed, meta }: JobsSnapshot): FeedResult {
+  if (feed.schemaVersion !== JOBS_SCHEMA_VERSION) return { status: 'updating' };
+  return { status: 'ready', feed, meta, fromCache: false };
+}
 
-  useEffect(() => {
-    document.title = 'AML Jobs — AML North';
-  }, []);
+export default function Jobs() {
+  // Prerendered /jobs carries the build-time feed. Until hydration finishes,
+  // render it against the build's clock so the markup matches the static
+  // HTML; then switch to the visitor's clock and the live feed.
+  const { jobs: snapshot } = usePrerenderData();
+  const hydrated = useHydrated();
+  const [clientNow] = useState(() => new Date());
+  const now = hydrated || !snapshot ? clientNow : new Date(snapshot.renderedAt);
+  const state = useJobsFeed(snapshot && snapshotResult(snapshot));
 
   const generatedAt = state.status === 'ready' ? state.meta.generatedAt : null;
 
@@ -41,7 +51,10 @@ export default function Jobs() {
         {generatedAt && (
           <>
             {' · as of '}
-            <time dateTime={new Date(generatedAt).toISOString()} title={new Date(generatedAt).toLocaleString()}>
+            <time
+              dateTime={new Date(generatedAt).toISOString()}
+              title={hydrated ? new Date(generatedAt).toLocaleString() : undefined}
+            >
               {formatRelative(new Date(generatedAt), now)}
             </time>
           </>
