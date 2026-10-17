@@ -7,7 +7,16 @@ import { StaticRouter } from 'react-router-dom/server';
 import App from './App';
 import type { JobsFeed } from './lib/jobs';
 import { PRERENDER_DATA_ID, PrerenderContext, type PrerenderData } from './lib/prerender';
-import { canonicalUrl, NOT_FOUND_META, PAGES, pageFor, SITE_NAME, SITE_ORIGIN } from './lib/seo';
+import { LANG_TAG, OG_LOCALE } from './lib/i18n';
+import {
+  alternateLinks,
+  canonicalUrl,
+  NOT_FOUND_META,
+  PAGES,
+  pageFor,
+  SITE_NAME,
+  SITE_ORIGIN,
+} from './lib/seo';
 import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from './lib/site';
 
 export { PAGES };
@@ -15,6 +24,7 @@ export { PAGES };
 const HEAD_START = '<!--prerender:head-->';
 const HEAD_END = '<!--/prerender:head-->';
 const ROOT = '<div id="root"></div>';
+const HTML_OPEN = /<html lang="[^"]*">/;
 
 function escapeHtml(value: string): string {
   return value
@@ -62,6 +72,9 @@ function headTags(route: string): string {
   ];
   if (page) {
     tags.push(`<link rel="canonical" href="${canonicalUrl(page.path)}" />`);
+    for (const { hreflang, href } of alternateLinks(page)) {
+      tags.push(`<link rel="alternate" hreflang="${hreflang}" href="${href}" />`);
+    }
   } else {
     // The 404 page is served for every unknown URL; keep it out of the index.
     tags.push('<meta name="robots" content="noindex" />');
@@ -69,6 +82,7 @@ function headTags(route: string): string {
   tags.push(
     '<meta property="og:type" content="website" />',
     `<meta property="og:site_name" content="${SITE_NAME}" />`,
+    `<meta property="og:locale" content="${OG_LOCALE[page?.lang ?? 'en']}" />`,
     `<meta property="og:title" content="${t}" />`,
     `<meta property="og:description" content="${d}" />`,
   );
@@ -78,7 +92,10 @@ function headTags(route: string): string {
     `<meta name="twitter:title" content="${t}" />`,
     `<meta name="twitter:description" content="${d}" />`,
   );
-  if (page?.path === '/') tags.push(dataBlock('application/ld+json', organization));
+  // Organization data on the home page, in both languages.
+  if (page?.path === '/' || page?.path === '/fr') {
+    tags.push(dataBlock('application/ld+json', organization));
+  }
   return tags.join('\n    ');
 }
 
@@ -89,9 +106,10 @@ function headTags(route: string): string {
 export function renderPage(template: string, route: string, data: PrerenderData = {}): string {
   const headStart = template.indexOf(HEAD_START);
   const headEnd = template.indexOf(HEAD_END);
-  if (headStart === -1 || headEnd === -1 || !template.includes(ROOT)) {
-    throw new Error('index.html is missing the prerender head markers or the empty #root');
+  if (headStart === -1 || headEnd === -1 || !template.includes(ROOT) || !HTML_OPEN.test(template)) {
+    throw new Error('index.html is missing <html lang>, the prerender head markers or the empty #root');
   }
+  const lang = LANG_TAG[pageFor(route)?.lang ?? 'en'];
 
   const location = route === '404' ? '/404' : route;
   const app = renderToString(
@@ -111,7 +129,9 @@ export function renderPage(template: string, route: string, data: PrerenderData 
     template.slice(0, headStart) +
     headTags(route) +
     template.slice(headEnd + HEAD_END.length)
-  ).replace(ROOT, () => body);
+  )
+    .replace(HTML_OPEN, `<html lang="${lang}">`)
+    .replace(ROOT, () => body);
 }
 
 /**

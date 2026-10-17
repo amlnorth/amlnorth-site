@@ -92,12 +92,18 @@ have to run JS to see it. The build prerenders every route to static HTML:
 2. `vite build --ssr src/entry-server.tsx` — the same app bundled for Node.
 3. [scripts/prerender.mjs](scripts/prerender.mjs) renders each route with
    `react-dom/server` into the built `index.html`, writing `index.html`,
-   `jobs.html`, `studio.html`, `certifications.html`, `legal.html`, a
-   `404.html`, and `sitemap.xml`.
+   `jobs.html`, `studio.html`, `certifications.html`, `legal.html`, their
+   French versions (`fr.html`, `fr/studio.html`, `fr/certifications.html`,
+   `fr/legal.html`), a `404.html`, and `sitemap.xml`.
 
-Each file carries its own title, description, canonical, and Open Graph/Twitter
-tags from one table, [src/lib/seo.ts](src/lib/seo.ts), and the home page adds
-Organization JSON-LD. `/jobs` is rendered from `public/jobs.json` as of the
+Each file carries its own `<html lang>`, title, description, canonical, and
+Open Graph/Twitter tags from one table, [src/lib/seo.ts](src/lib/seo.ts), and
+the home page adds Organization JSON-LD. Translated pages also list `hreflang`
+alternates (`en-CA`, `fr-CA`, `x-default`). Copy lives in
+[src/content/](src/content/): one English and one French file per page, typed
+by a shared shape so a missing string fails the type-check. There is no i18n
+library: the language comes from the route (`/fr/…`). `/jobs` is
+English-only. `/jobs` is rendered from `public/jobs.json` as of the
 build. Every feed push triggers a Pages rebuild, so the static list tracks the
 feed. The browser then **hydrates** that markup and behaves exactly as the SPA
 always has. `/jobs` still fetches the live feed after load.

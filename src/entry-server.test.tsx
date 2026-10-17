@@ -51,7 +51,30 @@ const PAGE_TEXT: Record<string, string> = {
   '/studio': 'Report Studio prepares FINTRAC reports in your browser',
   '/certifications': 'The one that matters most in Canada.',
   '/legal': 'hello@amlnorth.ca',
+  '/fr': 'Postes ouverts en lutte contre le blanchiment',
+  '/fr/studio': 'Report Studio est offert en anglais seulement pour',
+  '/fr/certifications': 'Celle qui compte le plus au Canada.',
+  '/fr/legal': 'Court et honnête. Dernière mise à jour',
 };
+
+// English copy that must not leak onto the matching French page.
+const ENGLISH_TEXT: Record<string, string> = {
+  '/fr': PAGE_TEXT['/'],
+  '/fr/studio': PAGE_TEXT['/studio'],
+  '/fr/certifications': PAGE_TEXT['/certifications'],
+  '/fr/legal': 'Short and honest.',
+};
+
+const PAIRS = [
+  ['/', '/fr'],
+  ['/studio', '/fr/studio'],
+  ['/certifications', '/fr/certifications'],
+  ['/legal', '/fr/legal'],
+] as const;
+
+function hreflangs(html: string): string[] {
+  return html.match(/<link rel="alternate" hreflang="[^"]+" href="[^"]+" \/>/g) ?? [];
+}
 
 describe('prerendered pages', () => {
   it('covers every route with search-length titles and descriptions', () => {
@@ -90,8 +113,57 @@ describe('prerendered pages', () => {
     },
   );
 
-  it('puts Organization JSON-LD on the home page only', () => {
+  it.each(PAIRS)('%s and %s carry the right lang and identical hreflang alternates', (en, fr) => {
+    const expected = [
+      `<link rel="alternate" hreflang="en-CA" href="${canonicalUrl(en)}" />`,
+      `<link rel="alternate" hreflang="fr-CA" href="${canonicalUrl(fr)}" />`,
+      `<link rel="alternate" hreflang="x-default" href="${canonicalUrl(en)}" />`,
+    ];
+    const enHtml = renderPage(TEMPLATE, en);
+    const frHtml = renderPage(TEMPLATE, fr);
+
+    expect(enHtml).toMatch(/^<!doctype html>\s*<html lang="en-CA">/);
+    expect(frHtml).toMatch(/^<!doctype html>\s*<html lang="fr-CA">/);
+    expect(hreflangs(enHtml)).toEqual(expected);
+    expect(hreflangs(frHtml)).toEqual(expected);
+    expect(enHtml).toContain('<meta property="og:locale" content="en_CA" />');
+    expect(frHtml).toContain('<meta property="og:locale" content="fr_CA" />');
+    // Each language is canonical to itself, not to the other.
+    expect(frHtml).toContain(`<link rel="canonical" href="${canonicalUrl(fr)}" />`);
+  });
+
+  it.each(PAIRS)('%s ↔ %s: the EN / FR toggle links each page to its counterpart', (en, fr) => {
+    const toggle = (html: string) => html.match(/<a[^>]*aria-label="(?:Lire|Read)[^"]*"[^>]*>/)?.[0];
+    expect(toggle(renderPage(TEMPLATE, en))).toContain(`href="${fr}"`);
+    expect(toggle(renderPage(TEMPLATE, en))).toContain('hrefLang="fr-CA"');
+    expect(toggle(renderPage(TEMPLATE, fr))).toContain(`href="${en}"`);
+    expect(toggle(renderPage(TEMPLATE, fr))).toContain('hrefLang="en-CA"');
+  });
+
+  it.each(PAIRS.map(([, fr]) => fr))('%s is in French, chrome included', (fr) => {
+    const root = renderPage(TEMPLATE, fr).split('<div id="root"')[1];
+    expect(root).toContain(PAGE_TEXT[fr]);
+    expect(root).not.toContain(ENGLISH_TEXT[fr]);
+    expect(root).toContain('aria-label="Navigation principale"');
+    expect(root).toContain('href="/jobs">Emplois (en anglais)</a>');
+    expect(root).toContain('aria-label="Changer de thème"');
+    for (const label of ['>Home<', '>Jobs<', '>Terms &amp; Privacy<']) {
+      expect(root).not.toContain(label);
+    }
+  });
+
+  it('keeps /jobs and the 404 English-only: no toggle, no hreflang', () => {
+    for (const route of ['/jobs', '404']) {
+      const html = renderPage(TEMPLATE, route, dataFor(route));
+      expect(html).toMatch(/<html lang="en-CA">/);
+      expect(hreflangs(html)).toEqual([]);
+      expect(html).not.toMatch(/aria-label="Lire cette page/);
+    }
+  });
+
+  it('puts Organization JSON-LD on the home page only (both languages)', () => {
     const home = renderPage(TEMPLATE, '/');
+    expect(renderPage(TEMPLATE, '/fr')).toContain(home.match(/<script type="application\/ld\+json">.*?<\/script>/)![0]);
     const match = home.match(/<script type="application\/ld\+json">(.*?)<\/script>/);
     expect(JSON.parse(match![1])).toEqual({
       '@context': 'https://schema.org',
@@ -106,7 +178,7 @@ describe('prerendered pages', () => {
         sameAs: ['https://www.linkedin.com/in/salmanzaman/'],
       },
     });
-    for (const path of ['/jobs', '/studio', '/certifications', '/legal']) {
+    for (const path of ['/jobs', '/studio', '/certifications', '/legal', '/fr/studio', '/fr/legal']) {
       expect(renderPage(TEMPLATE, path, dataFor(path))).not.toContain('application/ld+json');
     }
   });
@@ -203,7 +275,7 @@ describe('hydration', () => {
   // main.tsx does. React recovers from a server/client markup mismatch by
   // re-rendering on the client and reporting it via onRecoverableError (and
   // dev warnings via console.error) — a clean hydration reports neither.
-  it.each(['/', '/jobs', '/studio', '/certifications', '/legal', '404'])(
+  it.each([...PAGES.map((page) => page.path), '404'])(
     'hydrates %s without a mismatch',
     async (route) => {
       const url = route === '404' ? '/no-such-page' : route;
@@ -238,9 +310,13 @@ describe('hydration', () => {
       expect(errors).not.toHaveBeenCalled();
       expect(container.querySelector('h1')).not.toBeNull();
       if (route !== '/jobs') expect(container.textContent).toBe(prerendered);
-      // Post-hydration: the label reflects the stored theme, and the title the route.
-      expect(container.querySelector('button[aria-label="Switch to light theme"]')).not.toBeNull();
+      // Post-hydration: the label reflects the stored theme in the page's
+      // language, and the title and <html lang> the route.
+      const french = pageFor(url)?.lang === 'fr';
+      const label = french ? 'Passer au thème clair' : 'Switch to light theme';
+      expect(container.querySelector(`button[aria-label="${label}"]`)).not.toBeNull();
       expect(document.title).toBe(pageFor(url)?.title ?? 'Page not found — AML North');
+      expect(document.documentElement.lang).toBe(french ? 'fr-CA' : 'en-CA');
     },
   );
 });

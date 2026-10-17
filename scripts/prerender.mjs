@@ -4,11 +4,13 @@
 //
 // Output, matching Cloudflare Pages' routing (/jobs.html is served at /jobs):
 //   dist/index.html, jobs.html, studio.html, certifications.html, legal.html
+//   dist/fr.html, fr/studio.html, fr/certifications.html, fr/legal.html
 //   dist/404.html   — served with a real 404 status for unknown paths
 //   dist/sitemap.xml
 // /jobs embeds public/jobs.json as of this build; every feed push triggers a
 // Pages rebuild, so the static list tracks the feed.
-import { readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { dirname } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 const { PAGES, renderPage, renderSitemap } = await import(
@@ -23,6 +25,7 @@ const renderedAt = new Date().toISOString();
 for (const page of PAGES) {
   const file = page.path === '/' ? 'index.html' : `${page.path.slice(1)}.html`;
   const data = page.path === '/jobs' ? { jobs: { feed, meta, renderedAt } } : {};
+  mkdirSync(dirname(`dist/${file}`), { recursive: true });
   writeFileSync(`dist/${file}`, renderPage(template, page.path, data));
   console.log(`prerendered ${page.path} -> dist/${file}`);
 }
