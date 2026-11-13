@@ -8,22 +8,22 @@
       "location": "Toronto, ON, CAN",
       "workModel": null,
       "seniority": "manager",
-      "postedAt": "2026-11-02T00:00:00Z",
+      "postedAt": "2026-11-03T00:00:00Z",
       "firstSeenAt": "2026-11-02T20:35:52Z",
       "url": "https://bmo.wd3.myworkdayjobs.com/en-US/External/job/Toronto-ON-CAN/Manager--AML-FIU_R260029898-1",
       "source": "workday-bmo"
     },
     {
-      "id": "e84aeb8f5a5b3b0d",
-      "title": "Compliance Analyst, Enterprise AML and Payments",
-      "company": "Questrade",
+      "id": "ae79e7ce6ef74888",
+      "title": "Senior Manager AML Risk Insights",
+      "company": "CIBC",
       "location": "Toronto, ON",
       "workModel": null,
-      "seniority": "analyst",
-      "postedAt": "2026-10-09T00:00:00Z",
-      "firstSeenAt": "2026-10-10T01:33:06Z",
-      "url": "https://jobs.dayforcehcm.com/en-US/qfg/CANDIDATEPORTAL/jobs/18075",
-      "source": "dayforce-questrade"
+      "seniority": "manager",
+      "postedAt": "2026-11-13T00:00:00Z",
+      "firstSeenAt": "2026-11-13T02:26:32Z",
+      "url": "https://cibc.wd3.myworkdayjobs.com/en-US/search/job/Toronto-ON/Senior-Manager-AML-Risk-Insights_2623090",
+      "source": "workday-cibc"
     },
     {
       "id": "ede00630240e03b8",
@@ -56,7 +56,7 @@
       "location": "Toronto, Ontario",
       "workModel": null,
       "seniority": "analyst",
-      "postedAt": "2026-11-06T00:00:00Z",
+      "postedAt": "2026-11-07T00:00:00Z",
       "firstSeenAt": "2026-11-07T01:39:24Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Financial-Crime-Risk-Specialist--5440-_R_1519738",
       "source": "workday-td-bank"
@@ -80,7 +80,7 @@
       "location": "Toronto, Ontario",
       "workModel": null,
       "seniority": "senior",
-      "postedAt": "2026-11-06T00:00:00Z",
+      "postedAt": "2026-11-07T00:00:00Z",
       "firstSeenAt": "2026-08-28T05:58:33Z",
       "url": "https://td.wd3.myworkdayjobs.com/en-US/TD_Bank_Careers/job/Toronto-Ontario/Senior-Counsel--Financial-Crime_R_1506623",
       "source": "workday-td-bank"
